@@ -3,11 +3,28 @@ Theme Name: Responsive Child
 Template: responsive
 Author: Gerard Greenidge
 Version: 1.0.1436554365
-Updated: 2016-01-05 1:58:44
+Updated: 2016-05-12 10:58:44
 */
 
 @charset "UTF-8";
 
+/*Keira Edits Begin*/
+
+.sp-button {
+    width: 10px;
+    height: 10px;
+    border: 2px solid #D1DD27;
+    border-radius: 50%;
+    margin: 4px;
+    display: inline-block;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.sp-selected-button {
+    background-color: #D1DD27;
+}
 .badges {
     text-align: center;
     width: 100%;
@@ -26,7 +43,7 @@ input#gform_submit_button_1,input#gform_submit_button_2 {
 body.post-type-archive-news .viewport-container .col-300 {
     width: 25%;
     float: right;
-    background: #fff;
+    background: #000;
 }
 
 
@@ -114,21 +131,6 @@ text-decoration:none;
     background: #ABB722;
     background: rgba(171, 183, 34, 0.85);
 }
-.sp-button {
-    width: 10px;
-    height: 10px;
-    border: 2px solid #D1DD27;
-    border-radius: 50%;
-    margin: 4px;
-    display: inline-block;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    cursor: pointer;
-}
-.sp-selected-button {
-    background-color: #D1DD27;
-}
 
 .widget-title h3, .widget-title-home h3 {
     display: block;
@@ -181,6 +183,8 @@ a:hover#parent-login-button {
 }
 
 
+/*Keira Edits End*/
+
 body{
   background:#fff;
   font-family:'Open Sans',Arial,Helvetica,sans-serif;
@@ -224,6 +228,9 @@ body, del {
    color: #ABB722;  
    font-size:1.1em;
 }
+
+
+
 
 h1 {
     margin-top: .5em;
@@ -684,10 +691,6 @@ ul.menu>li:hover{
   border-left:none;
 }
 
-div#footer ul {
-    list-style: none;
-}
-
 /* Global Menu Ends Here */
 
 #logo {
@@ -696,8 +699,8 @@ div#footer ul {
   width: 82%;
 }
 
-#logo_mobile {
-    display: none;
+#logo_mobile{
+  display:none;
 }
 
 .top-widget {
@@ -805,8 +808,6 @@ div#footer ul {
     margin-bottom: 10px;
 }
 
-
-/* Testimonial Styles */
 .home_top_testimonial_line2 {
     color: #bcc823;
     text-align: center;
@@ -831,21 +832,6 @@ div#footer ul {
     margin-bottom: 20px;
 }
 
-.testimonial-horiz {
-    background: #fff url(/assets/testimonial-quote-line.png) no-repeat top center;
-    border: 0;
-    padding: 50px 20px 10px 20px;
-    font-size: 1em;
-    line-height: 1.3em;
-    font-style: normal;
-    min-height: 70px;
-    font-weight: 300;
-    margin: 15px 0 15px 0;
-}
-strong.testimonial-horiz {
-font-weight: 600;
-}
-/* End Testimonial styles */
 .admissions_process_left {
     clear: both;
     float: left;
@@ -887,6 +873,20 @@ font-weight: 600;
     min-height: 40px;
 }
 
+.testimonial-horiz {
+    background: #fff url(/assets/testimonial-quote-line.png) no-repeat top center;
+    border: 0;
+    padding: 50px 20px 10px 20px;
+    font-size: 1.1em;
+    line-height: 1.3em;
+    font-style: italic;
+    min-height: 70px;
+    font-weight: 300;
+    margin: 15px 0 15px 0;
+}
+strong.testimonial-horiz {
+font-weight: 600;
+}
 .tagline {
     color: #000;
     font-weight: 300;
@@ -1251,7 +1251,6 @@ text-decoration: none;
 margin-top: 0px;
 }
 
-
 /** Learning Edge **/
 
 /*** 
@@ -1481,7 +1480,7 @@ margin-bottom: 300px;
 #footer_widget ul {
     padding-left: 0;
     line-height: 18px;
-    list-type:none;
+    list-style-type:none;
 }
 
 #footer_bottom {
@@ -1565,6 +1564,7 @@ float: left; min-height: 190px; width: 197px; background: #fff url('/assets/icon
 float: left; min-height: 190px; width: 197px; background: #fff url('/assets/icon-success-stories.png') no-repeat 50% 85%; border: 2px solid #f7aa17; border-bottom: 24px solid #f7aa17; margin: -79px 5px; font-size: 24px; font-weight: bold; color: #f7aa17; text-align: center; padding: 15px;}
 
 /*Calendar Styles*/
+
 .my-calendar-header .mc-format {
 	display: none;
 }
@@ -1589,12 +1589,6 @@ float: left; min-height: 190px; width: 197px; background: #fff url('/assets/icon
 	float: left;
 }
 
-.future-event p {
-	text-align: center;
-	padding: 5px;
-        font-weight: 400;
-}
-
 .single-event img.attachment-post-thumbnail.wp-post-image {
 	width: 200px;
 	float: left;
@@ -1613,16 +1607,12 @@ float: left; min-height: 190px; width: 197px; background: #fff url('/assets/icon
 .single-event p {
 	padding-left: 220px;
 	font-size:14px;
-        font-weight: 400;
 }
 
 .single-event p.daterange {
 	padding: 0;
 	font-size: 20px;
-        text-align:left;
 }
-
-
 
 .single-event h2.event-title.summary {
 	padding: 0;
@@ -1645,7 +1635,7 @@ float: left; min-height: 190px; width: 197px; background: #fff url('/assets/icon
 	display: none;
 }
 
-ul.upcoming-events li.today {
+ul#upcoming-events li.today {
     padding: 0 10px 0 0;
     list-style-type: none;
     font-size: .85em;
@@ -1654,14 +1644,14 @@ ul.upcoming-events li.today {
     margin: 15px 0 15px 0;
 }
 
-ul.upcoming-events li.today a, ul#upcoming-events li.future-event a {
+ul#upcoming-events li.today a, ul#upcoming-events li.future-event a {
     font-size: 1.2em;
     font-weight: 600;
     text-decoration: none;
 }
 
-#content .upcoming-events li.future-event {
-	width: 202px;
+#upcoming-events li.future-event {
+	width: 227px;
 	height: 500px;
 	float: left;
 	padding: 0 20px 20px 20px;
@@ -1672,36 +1662,17 @@ ul.upcoming-events li.today a, ul#upcoming-events li.future-event a {
 	border-bottom: 1px solid #f2f2f2;
 }
 
-
-.upcoming-events li.today {
-    width: 227px;
-    /*height: 500px;
-    float: left;*/
-    padding: 0 20px 20px 20px;
-    margin: -20px 0 20px 0;
-    list-style-type: none;
-    font-size: 15px;
+.future-event p {
+	text-align: center;
+	padding: 5px;
 }
 
-
-#content .upcoming-events li.future-event {
-    width: 227px;
-    height: 500px;
-    float: left;
-    padding: 0 20px 20px 20px;
-    margin: -20px 0 20px 0;
-    list-style-type: none;
-    font-size: 15px;
-}
-
-#content .upcoming-events li.future-event img.attachment-post-thumbnail.wp-post-image, #content .upcoming-events li.today img.attachment-post-thumbnail.wp-post-image {
+#upcoming-events li.future-event img.attachment-post-thumbnail.wp-post-image, #upcoming-events li.today img.attachment-post-thumbnail.wp-post-image {
 	border-left: 1px solid #f2f2f2;
 	border-top: 1px solid #f2f2f2;
 	border-right: 1px solid #f2f2f2;
 	padding: 0;
 	margin-bottom:-5px;
-        height:inherit;
-	float:none;
 }
 
 .cat-event_date {
@@ -1754,14 +1725,6 @@ h2.event-title img.category-icon {
   float: left;
 }
 
-.cal-details-rightcol p {
-    text-align: left;
-}
-
-p.cal-details-addtocal, p.cal-details-backtocal {
-    text-align: left;
-}
-
 .mc-list li .vevent {
     line-height: 10px;
     padding: 1px 0px;
@@ -1799,7 +1762,6 @@ p.cal-details-addtocal, p.cal-details-backtocal {
     min-height: 610px;
     background: url(/wp-content/uploads/2016/09/sandhillschool-stingray-logo-sm.png) no-repeat bottom right;
 }
-
 .home_calendar_feed_content {
     padding: .8em;
 }
@@ -1816,7 +1778,7 @@ p.cal-details-addtocal, p.cal-details-backtocal {
 .home .my-calendar-header, .home h2.heading.my-calendar-month, .home .event-date a, .home .past-date, .mc-list .current-day .event-date:before, .home .future-day, .home .mc_bottomnav, #responsive_menu_button, #mobile_subnav {
     display: none;
 }
-.home_calendar_feed_content ul#downloadable-pdf, ul.upcoming-events {
+.home_calendar_feed_content ul#downloadable-pdf, ul#upcoming-events {
     list-style: none;
     margin: 0;
     padding-left: 0;
@@ -1828,7 +1790,7 @@ p.cal-details-addtocal, p.cal-details-backtocal {
     margin-left: 25px;
 }
 
-.home_calendar_feed_content ul#downloadable-pdf li.downloadable-calendar, .home_calendar_feed_content ul.upcoming-events li.today {
+.home_calendar_feed_content ul#downloadable-pdf li.downloadable-calendar, .home_calendar_feed_content ul#upcoming-events li.today {
     padding: 0 10px 0 0;
     list-style-type: none;
     font-size: .85em;
@@ -1837,13 +1799,13 @@ p.cal-details-addtocal, p.cal-details-backtocal {
     margin: 15px 0 15px 0;
 }
 
-.home_calendar_feed_content ul.upcoming-events li.today a, .home_calendar_feed_content ul.upcoming-events li.future-event a {
+.home_calendar_feed_content ul#upcoming-events li.today a, .home_calendar_feed_content ul#upcoming-events li.future-event a {
     font-size: 1.2em;
     font-weight: 600;
     text-decoration: none;
 }
 
-.home_calendar_feed_content ul.upcoming-events li.future-event {
+.home_calendar_feed_content ul#upcoming-events li.future-event {
     padding: 0 10px 0 0;
     list-style-type: none;
     font-size: .85em;
@@ -1873,7 +1835,7 @@ p.cal-details-addtocal, p.cal-details-backtocal {
     background: url(/wp-content/uploads/2016/03/acrobat-pdf20px.png) no-repeat;
 }
 
-.home_calendar_feed_content ul.upcoming-events {
+.home_calendar_feed_content ul#upcoming-events {
     list-style: none;
     margin: 0;
     padding-left: 0;
@@ -2028,6 +1990,11 @@ a.page-numbers {
     padding: 0 5px;
 }
 
+/*Event Landing Page Styles*/
+body.page-id-1423 h1.entry-title.post-title {
+    display: none;
+}
+
 /* End Sandbox Styles */
 
 /***** Annual Fund Styles ******/
@@ -2098,6 +2065,9 @@ h3.af_heading{
 @media screen and (max-width: 1024px) {
 .home_featured_event {
 margin:0 .825em 20px 0;
+}
+.pad50 {
+   padding: 0;
 }
 }
 
@@ -2176,13 +2146,11 @@ border-bottom:0;
    padding-bottom: 0px;
 }
 
-
 /* Sandbox Styles */
 body.type-sandbox img.wp-post-image, body.post-type-archive-sandbox .wp-post-image, .sandbox-thumbnail .wp-post-image {
     max-width: 100%;
 }
 /* End Sandbox Styles */
-
 }
 
 media only screen and (max-width : 650px) {
@@ -2659,6 +2627,7 @@ div#section_learningedge {
     padding-left: 0;
     line-height: 18px;
     text-align: center;
+    list-style-type: none;
 }
 
 .copyright {
@@ -2860,7 +2829,7 @@ form#searchform {
     margin: 45px 0 22px 0;
     width: 82%;
     text-align: center;
-    display:none;
+    diaplay:none;
 }
 
 #logo_mobile {
@@ -2868,7 +2837,6 @@ form#searchform {
     text-align: center;
     margin: 45px 0 22px 0;
 }
-
 
 .top-widget {
     float: none;
