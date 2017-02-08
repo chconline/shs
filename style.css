@@ -2193,6 +2193,15 @@ h2.summer-enroll{
     line-height: normal;
 }
 
+.summer-dates ul {
+    list-style: none;
+    font-size: 1.2em;
+    font-weight: 300;
+    margin: 0.5em 0 1em 0;
+    padding: inherit;
+    border: none;
+}
+
 /*** End Summer at Sand Hill School ***/
 
 /*** Open Sans Font Weights and Styles ***/
