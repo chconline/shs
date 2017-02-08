@@ -3,28 +3,11 @@ Theme Name: Responsive Child
 Template: responsive
 Author: Gerard Greenidge
 Version: 1.0.1436554365
-Updated: 2016-05-12 10:58:44
+Updated: 2016-01-05 1:58:44
 */
 
 @charset "UTF-8";
 
-/*Keira Edits Begin*/
-
-.sp-button {
-    width: 10px;
-    height: 10px;
-    border: 2px solid #D1DD27;
-    border-radius: 50%;
-    margin: 4px;
-    display: inline-block;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    cursor: pointer;
-}
-.sp-selected-button {
-    background-color: #D1DD27;
-}
 .badges {
     text-align: center;
     width: 100%;
@@ -43,7 +26,7 @@ input#gform_submit_button_1,input#gform_submit_button_2 {
 body.post-type-archive-news .viewport-container .col-300 {
     width: 25%;
     float: right;
-    background: #000;
+    background: #fff;
 }
 
 
@@ -131,6 +114,21 @@ text-decoration:none;
     background: #ABB722;
     background: rgba(171, 183, 34, 0.85);
 }
+.sp-button {
+    width: 10px;
+    height: 10px;
+    border: 2px solid #D1DD27;
+    border-radius: 50%;
+    margin: 4px;
+    display: inline-block;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.sp-selected-button {
+    background-color: #D1DD27;
+}
 
 .widget-title h3, .widget-title-home h3 {
     display: block;
@@ -183,8 +181,6 @@ a:hover#parent-login-button {
 }
 
 
-/*Keira Edits End*/
-
 body{
   background:#fff;
   font-family:'Open Sans',Arial,Helvetica,sans-serif;
@@ -228,9 +224,6 @@ body, del {
    color: #ABB722;  
    font-size:1.1em;
 }
-
-
-
 
 h1 {
     margin-top: .5em;
@@ -691,6 +684,10 @@ ul.menu>li:hover{
   border-left:none;
 }
 
+div#footer ul {
+    list-style: none;
+}
+
 /* Global Menu Ends Here */
 
 #logo {
@@ -699,8 +696,8 @@ ul.menu>li:hover{
   width: 82%;
 }
 
-#logo_mobile{
-  display:none;
+#logo_mobile {
+    display: none;
 }
 
 .top-widget {
@@ -808,6 +805,8 @@ ul.menu>li:hover{
     margin-bottom: 10px;
 }
 
+
+/* Testimonial Styles */
 .home_top_testimonial_line2 {
     color: #bcc823;
     text-align: center;
@@ -832,6 +831,21 @@ ul.menu>li:hover{
     margin-bottom: 20px;
 }
 
+.testimonial-horiz {
+    background: #fff url(/assets/testimonial-quote-line.png) no-repeat top center;
+    border: 0;
+    padding: 50px 20px 10px 20px;
+    font-size: 1.1em;
+    line-height: 1.3em;
+    font-style: italic;
+    min-height: 70px;
+    font-weight: 300;
+    margin: 15px 0 15px 0;
+}
+strong.testimonial-horiz {
+font-weight: 600;
+}
+/* End Testimonial styles */
 .admissions_process_left {
     clear: both;
     float: left;
@@ -873,20 +887,6 @@ ul.menu>li:hover{
     min-height: 40px;
 }
 
-.testimonial-horiz {
-    background: #fff url(/assets/testimonial-quote-line.png) no-repeat top center;
-    border: 0;
-    padding: 50px 20px 10px 20px;
-    font-size: 1.1em;
-    line-height: 1.3em;
-    font-style: italic;
-    min-height: 70px;
-    font-weight: 300;
-    margin: 15px 0 15px 0;
-}
-strong.testimonial-horiz {
-font-weight: 600;
-}
 .tagline {
     color: #000;
     font-weight: 300;
@@ -1054,7 +1054,7 @@ border: 1px solid #ccc;
 
 /*Green Box*/
 .greenbox {
-background:#b0bc22;
+background:#c1cd23;
 padding: 20px;
 margin-bottom: 15px;
 color:#fff;
@@ -1231,8 +1231,8 @@ margin-top: 0px;
 .greenlinebox {
 clear:both;
 background:#fff;
-border:1px solid #D1DD27;
-border-bottom:15px solid #D1DD27;
+border:1px solid #c1cd23;
+border-bottom:15px solid #c1cd23;
 padding: 20px;
 margin-bottom: 15px;
 min-height: 170px;
@@ -1250,6 +1250,7 @@ min-height: 170px;
 text-decoration: none;
 margin-top: 0px;
 }
+
 
 /** Learning Edge **/
 
@@ -1480,7 +1481,7 @@ margin-bottom: 300px;
 #footer_widget ul {
     padding-left: 0;
     line-height: 18px;
-    list-style-type:none;
+    list-type:none;
 }
 
 #footer_bottom {
@@ -1564,7 +1565,6 @@ float: left; min-height: 190px; width: 197px; background: #fff url('/assets/icon
 float: left; min-height: 190px; width: 197px; background: #fff url('/assets/icon-success-stories.png') no-repeat 50% 85%; border: 2px solid #f7aa17; border-bottom: 24px solid #f7aa17; margin: -79px 5px; font-size: 24px; font-weight: bold; color: #f7aa17; text-align: center; padding: 15px;}
 
 /*Calendar Styles*/
-
 .my-calendar-header .mc-format {
 	display: none;
 }
@@ -1589,6 +1589,12 @@ float: left; min-height: 190px; width: 197px; background: #fff url('/assets/icon
 	float: left;
 }
 
+.future-event p {
+	text-align: center;
+	padding: 5px;
+        font-weight: 400;
+}
+
 .single-event img.attachment-post-thumbnail.wp-post-image {
 	width: 200px;
 	float: left;
@@ -1607,12 +1613,16 @@ float: left; min-height: 190px; width: 197px; background: #fff url('/assets/icon
 .single-event p {
 	padding-left: 220px;
 	font-size:14px;
+        font-weight: 400;
 }
 
 .single-event p.daterange {
 	padding: 0;
 	font-size: 20px;
+        text-align:left;
 }
+
+
 
 .single-event h2.event-title.summary {
 	padding: 0;
@@ -1635,7 +1645,7 @@ float: left; min-height: 190px; width: 197px; background: #fff url('/assets/icon
 	display: none;
 }
 
-ul#upcoming-events li.today {
+ul.upcoming-events li.today {
     padding: 0 10px 0 0;
     list-style-type: none;
     font-size: .85em;
@@ -1644,14 +1654,14 @@ ul#upcoming-events li.today {
     margin: 15px 0 15px 0;
 }
 
-ul#upcoming-events li.today a, ul#upcoming-events li.future-event a {
+ul.upcoming-events li.today a, ul#upcoming-events li.future-event a {
     font-size: 1.2em;
     font-weight: 600;
     text-decoration: none;
 }
 
-#upcoming-events li.future-event {
-	width: 227px;
+#content .upcoming-events li.future-event {
+	width: 202px;
 	height: 500px;
 	float: left;
 	padding: 0 20px 20px 20px;
@@ -1662,17 +1672,36 @@ ul#upcoming-events li.today a, ul#upcoming-events li.future-event a {
 	border-bottom: 1px solid #f2f2f2;
 }
 
-.future-event p {
-	text-align: center;
-	padding: 5px;
+
+.upcoming-events li.today {
+    width: 227px;
+    /*height: 500px;
+    float: left;*/
+    padding: 0 20px 20px 20px;
+    margin: -20px 0 20px 0;
+    list-style-type: none;
+    font-size: 15px;
 }
 
-#upcoming-events li.future-event img.attachment-post-thumbnail.wp-post-image, #upcoming-events li.today img.attachment-post-thumbnail.wp-post-image {
+
+#content .upcoming-events li.future-event {
+    width: 227px;
+    height: 500px;
+    float: left;
+    padding: 0 20px 20px 20px;
+    margin: -20px 0 20px 0;
+    list-style-type: none;
+    font-size: 15px;
+}
+
+#content .upcoming-events li.future-event img.attachment-post-thumbnail.wp-post-image, #content .upcoming-events li.today img.attachment-post-thumbnail.wp-post-image {
 	border-left: 1px solid #f2f2f2;
 	border-top: 1px solid #f2f2f2;
 	border-right: 1px solid #f2f2f2;
 	padding: 0;
 	margin-bottom:-5px;
+        height:inherit;
+	float:none;
 }
 
 .cat-event_date {
@@ -1725,6 +1754,14 @@ h2.event-title img.category-icon {
   float: left;
 }
 
+.cal-details-rightcol p {
+    text-align: left;
+}
+
+p.cal-details-addtocal, p.cal-details-backtocal {
+    text-align: left;
+}
+
 .mc-list li .vevent {
     line-height: 10px;
     padding: 1px 0px;
@@ -1762,6 +1799,7 @@ h2.event-title img.category-icon {
     min-height: 610px;
     background: url(/wp-content/uploads/2016/09/sandhillschool-stingray-logo-sm.png) no-repeat bottom right;
 }
+
 .home_calendar_feed_content {
     padding: .8em;
 }
@@ -1778,7 +1816,7 @@ h2.event-title img.category-icon {
 .home .my-calendar-header, .home h2.heading.my-calendar-month, .home .event-date a, .home .past-date, .mc-list .current-day .event-date:before, .home .future-day, .home .mc_bottomnav, #responsive_menu_button, #mobile_subnav {
     display: none;
 }
-.home_calendar_feed_content ul#downloadable-pdf, ul#upcoming-events {
+.home_calendar_feed_content ul#downloadable-pdf, ul.upcoming-events {
     list-style: none;
     margin: 0;
     padding-left: 0;
@@ -1790,7 +1828,7 @@ h2.event-title img.category-icon {
     margin-left: 25px;
 }
 
-.home_calendar_feed_content ul#downloadable-pdf li.downloadable-calendar, .home_calendar_feed_content ul#upcoming-events li.today {
+.home_calendar_feed_content ul#downloadable-pdf li.downloadable-calendar, .home_calendar_feed_content ul.upcoming-events li.today {
     padding: 0 10px 0 0;
     list-style-type: none;
     font-size: .85em;
@@ -1799,13 +1837,13 @@ h2.event-title img.category-icon {
     margin: 15px 0 15px 0;
 }
 
-.home_calendar_feed_content ul#upcoming-events li.today a, .home_calendar_feed_content ul#upcoming-events li.future-event a {
+.home_calendar_feed_content ul.upcoming-events li.today a, .home_calendar_feed_content ul.upcoming-events li.future-event a {
     font-size: 1.2em;
     font-weight: 600;
     text-decoration: none;
 }
 
-.home_calendar_feed_content ul#upcoming-events li.future-event {
+.home_calendar_feed_content ul.upcoming-events li.future-event {
     padding: 0 10px 0 0;
     list-style-type: none;
     font-size: .85em;
@@ -1835,7 +1873,7 @@ h2.event-title img.category-icon {
     background: url(/wp-content/uploads/2016/03/acrobat-pdf20px.png) no-repeat;
 }
 
-.home_calendar_feed_content ul#upcoming-events {
+.home_calendar_feed_content ul.upcoming-events {
     list-style: none;
     margin: 0;
     padding-left: 0;
@@ -1990,11 +2028,6 @@ a.page-numbers {
     padding: 0 5px;
 }
 
-/*Event Landing Page Styles*/
-body.page-id-1423 h1.entry-title.post-title {
-    display: none;
-}
-
 /* End Sandbox Styles */
 
 /***** Annual Fund Styles ******/
@@ -2060,6 +2093,194 @@ h3.af_heading{
 /**** End Annual Fund Styles *****/
 
 
+/*** Summer at Sand Hill School ***/
+
+h1.summer-banner {
+    background-image: url('/wp-content/uploads/2017/02/summer-banner-bkg.png');
+    border: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-position: bottom center;
+}
+
+.summer-dates{
+    border:1px solid #c1cd23;
+    margin: 0 auto;
+}
+
+h2.summer-enroll{
+    margin:0;
+    font-weight:900;
+    font-size:46px;
+}
+
+.summer-morning{
+    border: 1px solid #c1cd23;
+    background-color: #e2e259;
+    margin: 0 auto;
+}
+
+.summer-literacy {
+    margin: auto;
+}
+
+.summer-literacy .greenbox {
+    width: 19.6%;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    min-height: 190px;
+}
+
+
+.summer-literacy .greenbox:first-child {
+ margin-left: 2.127659574468%;
+}
+
+.summer-literacy ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.summer-lunch {
+    margin: 5px auto;
+    padding: inherit;
+}
+
+.summer-lunch h2 {
+    padding-top: 20px;
+}
+
+.summer-enrichment {
+    margin: auto;
+}
+
+.summer-enrichment .bluebox {
+    width: 27.7%;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    min-height: 320px;
+}
+
+.summer-enrichment .bluebox:first-child {
+    margin-left: 2.127659574468%;
+}
+
+.summer-photos .alignnone {
+    margin: 20px 20px 20px 0;
+}
+
+.summer-afternoon p.whitebox, .summer-morning p.whitebox, .summer-lunch p.whitebox, .summer-allday p.whitebox {
+    margin: 10px auto;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    font-size: x-large;
+}
+
+.summer-afternoon span.regular, .summer-morning span.regular, .summer-lunch span.regular, .summer-allday span.regular {
+    font-size: x-large;
+}
+
+.summer-morning .greenbox p {
+    line-height: initial;
+    height:40px;
+}
+
+.summer-morning .greenbox li{
+    line-height: normal;
+}
+
+/*** End Summer at Sand Hill School ***/
+
+/*** Open Sans Font Weights and Styles ***/
+.extra-bold{
+    font-weight:800;
+}
+
+.extra-bold-italic{
+    font-weight:800;
+    font-style:italic;
+}
+
+.bold{
+    font-weight:700;
+}
+
+.bold-italic{
+    font-weight:700;
+    font-style:italic;
+}
+
+.semi-bold{
+    font-weight:600;
+}
+
+.semi-bold-italic{
+    font-weight:600;
+    font-style:italic;
+}
+
+.regular{
+    font-weight:400;
+}
+
+.regular-italic{
+    font-weight:400;
+    font-style:italic;
+}
+
+.light{
+    font-weight:300;
+}
+
+.light-italic{
+    font-weight:300;
+    font-style:italic;
+}
+
+/*** End Open Sans Font Weights and Styles ***/
+
+/*** Sand Hill Text Color Pallette ***/
+
+.shs-green-text{
+   color: #c1cd23;
+}
+
+.shs-blue-text{
+   color: #00bce4;
+}
+
+.shs-orange-text{
+   color: #F26532;
+}
+
+.shs-gray-text{
+   color: #958d7a
+}
+
+/*** End Sand Hill Text Color Pallette ***/
+
+/*** Margins, Padding, Borders ***/
+
+.margin-none{
+   margin:0;
+}
+.margin-reset{
+   margin: inherit
+}
+
+.padding-none{
+   padding:0;
+}
+.padding-reset{
+   padding: inherit
+}
+
+/*** ***/
+
 /*** Media View Ports ****/
 
 @media screen and (max-width: 1024px) {
@@ -2123,6 +2344,63 @@ img.alignright, img.alignleft {
     text-align: center;
 }
 
+/**** Summer Mobile Styles ****/
+
+h1.summer-banner {
+    margin: 20px 0;
+}
+
+.summer-dates{
+    margin: 20px auto 0 auto;
+}
+
+.summer-morning{
+    width: 100%;
+    margin: 20px auto 0 auto;
+}
+
+.summer-literacy .greenbox:first-child {
+    margin: 10px auto;
+}
+
+.summer-literacy .greenbox {
+    width: 80%;
+    min-height: 150px;
+    margin: 10px auto;
+}
+
+.summer-morning .whitebox, .summer-afternoon .whitebox, .summer-allday .whitebox{
+    width:80%;
+}
+
+.summer-lunch {
+    width: inherit;
+}
+
+.summer-afternoon{
+    width:100%;
+}
+
+.summer-allday {
+    width: 100%;
+}
+
+.summer-enrichment .bluebox:first-child {
+    margin: 10px auto;
+}
+
+.summer-enrichment .bluebox {
+    width: 80%;
+    min-height: 250px;
+    margin: 10px auto;
+}
+
+.summer-photos .alignnone {
+    margin: 20px 20px 0 0;
+}
+
+/**** End Summer Mobile Syles ****/
+
 }
 @media screen and (max-width: 800px) {
 /* Styles */
@@ -2142,15 +2420,17 @@ border-bottom:0;
     background-color: #fff;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
-   padding-top: 0px;
-   padding-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
+
 
 /* Sandbox Styles */
 body.type-sandbox img.wp-post-image, body.post-type-archive-sandbox .wp-post-image, .sandbox-thumbnail .wp-post-image {
     max-width: 100%;
 }
 /* End Sandbox Styles */
+
 }
 
 media only screen and (max-width : 650px) {
@@ -2627,7 +2907,6 @@ div#section_learningedge {
     padding-left: 0;
     line-height: 18px;
     text-align: center;
-    list-style-type: none;
 }
 
 .copyright {
@@ -2829,7 +3108,7 @@ form#searchform {
     margin: 45px 0 22px 0;
     width: 82%;
     text-align: center;
-    diaplay:none;
+    display:none;
 }
 
 #logo_mobile {
@@ -2837,6 +3116,7 @@ form#searchform {
     text-align: center;
     margin: 45px 0 22px 0;
 }
+
 
 .top-widget {
     float: none;
