@@ -1,12 +1,11 @@
+@charset "UTF-8";
 /*
 Theme Name: Responsive Child
 Template: responsive
 Author: Gerard Greenidge
 Version: 1.0.1436554365
-Updated: 2016-01-05 1:58:44
+Updated: 2018-01-05
 */
-
-@charset "UTF-8";
 
 .badges {
     text-align: center;
@@ -285,6 +284,10 @@ h6 {
     list-style: inherit;
 }
 
+#content .shs-3col-calendar .upcoming-events {
+    padding-left: 0;
+}
+
 #content ol {
     list-style-position: outside;
     list-style-type: decimal;
@@ -296,7 +299,7 @@ h6 {
 }
 
 #container {
-  max-width: 100%;/
+  max-width: 100%;
   margin: 0 auto;
   padding: 0;
 }
@@ -930,7 +933,7 @@ a.button, input[type=reset], input[type=button], input[type=submit] {
     height: 29px;
 }
 
-/*OUTCOMES STYLES BEGIN*/
+/***** Impact and Outcomes *****/
 
 .pad50 {
    padding: 0 50px;
@@ -941,8 +944,45 @@ span.extraboldgreen {
     font-size: 1.3em;
 }
 
+.impactbox p {
+    max-width: 312px;
+	margin: 0 auto;
+}
 
-/*OUTCOMES STYLES END*/
+.impact-text-large{
+	font-size:30px;
+	line-height:36px;
+	font-weight: 800;
+	color:#111111;
+}
+
+.impact-text-normal{
+	font-size:21px;
+	line-height: 25px;
+	color:#111111;
+	font-weight:300;
+}
+
+.shs-impactads {
+    background: #c1cd23 no-repeat right url(http://beta.sandhillschool.org/wp-content/uploads/2017/02/CHC_Impact-Outcomes2017-divisionads_SandHillSchool-desktop-bkg.png);
+    width: 800px;
+    margin: 0 auto;
+    min-height: 210px;
+}
+
+.shs-impactads p {
+    padding: 56px 0 0 25px;
+    width: 415px;
+    color: white;
+    font-size: 27px;
+    line-height: 33px;
+}
+
+.shs-impactads span {
+    font-weight: 800;
+}
+
+/***** End Impact and Outcomes *****/
 
 /*Color Boxes*/
 
@@ -1654,13 +1694,13 @@ ul.upcoming-events li.today {
     margin: 15px 0 15px 0;
 }
 
-ul.upcoming-events li.today a, ul#upcoming-events li.future-event a {
+ul.upcoming-events li.today a, ul#upcoming-events li.future-event a, ul#upcoming-events li.mc_school-holidays a {
     font-size: 1.2em;
     font-weight: 600;
     text-decoration: none;
 }
 
-#content .upcoming-events li.future-event {
+#content .upcoming-events li.future-event, #content .upcoming-events li.mc_school-holidays  {
 	width: 202px;
 	height: 500px;
 	float: left;
@@ -1670,6 +1710,16 @@ ul.upcoming-events li.today a, ul#upcoming-events li.future-event a {
 	font-size: 15px;
 	border-left: 1px solid #f2f2f2;
 	border-bottom: 1px solid #f2f2f2;
+}
+
+#content .shs-3col-calendar .upcoming-events li.future-event, #content .shs-3col-calendar .upcoming-events li.mc_school-holidays {
+    width: 227px;
+    height: 500px;
+    float: left;
+    padding: 0 10px 20px 10px;
+    margin: 20px 0 20px 0;
+    list-style-type: none;
+    font-size: 15px;
 }
 
 
@@ -1684,7 +1734,7 @@ ul.upcoming-events li.today a, ul#upcoming-events li.future-event a {
 }
 
 
-#content .upcoming-events li.future-event {
+#content .upcoming-events li.future-event, #content .upcoming-events li.mc_school-holidays {
     width: 227px;
     height: 500px;
     float: left;
@@ -1694,7 +1744,7 @@ ul.upcoming-events li.today a, ul#upcoming-events li.future-event a {
     font-size: 15px;
 }
 
-#content .upcoming-events li.future-event img.attachment-post-thumbnail.wp-post-image, #content .upcoming-events li.today img.attachment-post-thumbnail.wp-post-image {
+#content .upcoming-events li.future-event img.attachment-post-thumbnail.wp-post-image, #content .upcoming-events li.today img.attachment-post-thumbnail.wp-post-image, #content .upcoming-events li.mc_school-holidays img.attachment-post-thumbnail.wp-post-image {
 	border-left: 1px solid #f2f2f2;
 	border-top: 1px solid #f2f2f2;
 	border-right: 1px solid #f2f2f2;
@@ -1709,7 +1759,7 @@ ul.upcoming-events li.today a, ul#upcoming-events li.future-event a {
     text-align: center;
     font-weight: bold;
     padding: 5px;
-    background: #00BCE4 url(http://www.chconline.org/assets/calendar/tilebottom_blue.png) top no-repeat;
+    background: #00BCE4 url(/assets/calendar/tilebottom_blue.png) top no-repeat;
     margin-top: 8px;
     line-height: 1.3em;
 }
@@ -2114,7 +2164,9 @@ h2.summer-enroll{
     font-weight:900;
     font-size:46px;
 }
-
+h2.summer-invite {
+    margin-bottom: 20px;
+}
 .summer-morning{
     border: 1px solid #c1cd23;
     background-color: #e2e259;
@@ -2126,7 +2178,7 @@ h2.summer-enroll{
 }
 
 .summer-literacy .greenbox {
-    width: 19.6%;
+    width: 19.4%;
     border-radius: 10px;
     padding: 10px;
     font-size: 16px;
@@ -2158,7 +2210,7 @@ h2.summer-enroll{
 }
 
 .summer-enrichment .bluebox {
-    width: 27.7%;
+    width: 27.3%;
     border-radius: 10px;
     padding: 10px;
     font-size: 16px;
@@ -2170,7 +2222,7 @@ h2.summer-enroll{
 }
 
 .summer-photos .alignnone {
-    margin: 20px 20px 20px 0;
+    margin: 20px 5px;
 }
 
 .summer-afternoon p.whitebox, .summer-morning p.whitebox, .summer-lunch p.whitebox, .summer-allday p.whitebox {
@@ -2266,6 +2318,14 @@ h2.summer-enroll{
    color: #F26532;
 }
 
+.shs-red-text{
+   color: #F06531;
+}
+
+.shs-gold-text{
+   color: #FCAF17;
+}
+
 .shs-gray-text{
    color: #958d7a
 }
@@ -2289,6 +2349,10 @@ h2.summer-enroll{
 }
 
 /*** ***/
+
+span.author-gravtar, .post-data{
+    display:none;
+}
 
 /*** Media View Ports ****/
 
@@ -2360,7 +2424,7 @@ h1.summer-banner {
 }
 
 .summer-dates{
-    margin: 20px auto 0 auto;
+    margin: 20px auto;
 }
 
 .summer-morning{
@@ -2372,10 +2436,10 @@ h1.summer-banner {
     margin: 10px auto;
 }
 
-.summer-literacy .greenbox {
+.summer-literacy .greenbox, .greenbox.col-140.grid.fit   {
     width: 80%;
-    min-height: 150px;
-    margin: 10px auto;
+    min-height: 100px;
+    margin: 10px auto !important;
 }
 
 .summer-morning .whitebox, .summer-afternoon .whitebox, .summer-allday .whitebox{
@@ -2398,14 +2462,14 @@ h1.summer-banner {
     margin: 10px auto;
 }
 
-.summer-enrichment .bluebox {
+.summer-enrichment .bluebox, .summer-enrichment .bluebox fit, .summer-enrichment .bluebox {
     width: 80%;
-    min-height: 250px;
-    margin: 10px auto;
+    min-height: 100px;
+    margin: 10px auto !important;
 }
 
 .summer-photos .alignnone {
-    margin: 20px 20px 0 0;
+    margin: 5px;
 }
 
 /**** End Summer Mobile Syles ****/
@@ -2440,42 +2504,6 @@ body.type-sandbox img.wp-post-image, body.post-type-archive-sandbox .wp-post-ima
 }
 /* End Sandbox Styles */
 
-}
-
-media only screen and (max-width : 650px) {
-/* Styles */
-.skip-container {
-    display: block;
-    position: relative;
-    padding: 0.5em 0.5em 0.5em 0;
-    background-color: #d1dd27;
-    text-align:center;
-}
-
-}
-
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-/* Styles */
-}
-
-/* Smartphones (landscape) ----------- */
-@media only screen 
-and (max-width : 321px) {
-/* Styles */
-}
-
-/* Smartphones (portrait) ----------- */
-@media only screen 
-and (max-width : 320px) {
-/* Styles */
-}
-
-@media only screen 
-and (max-height : 320px) {
-/* Styles */
 }
 
 /* iPads (portrait and landscape) (min-device-width : 768px)  ----------- */
@@ -2975,6 +3003,28 @@ only screen and (min-device-pixel-ratio : 1.5) {
 
 @media screen and (max-width:800px){
 
+.shs-impactads {
+    background: #c1cd23 no-repeat bottom url("/wp-content/uploads/2017/02/CHC_Impact-Outcomes2017-divisionads_SandHillSchool-mobile-bkg.png");
+    width: 100%;
+    margin: 0 auto;
+    min-height: 430px;
+    background-size: contain;
+}
+	
+.shs-impactads p {
+    padding: 40px 0 0 0;
+    width: 90%;
+    color: white;
+    font-size: 27px;
+    line-height: 33px;
+	margin:0 auto;
+	text-align: center;
+}
+	
+.impactbox p {
+    margin: 0 auto;
+}
+	
 .skip-container {
     display: block;
     position: relative;
@@ -3383,4 +3433,56 @@ div#section_learningedge {
 .home_featured_event {
     min-height: inherit;
 }
+}
+
+@media only screen and (max-width : 650px) {
+/* Styles */
+.skip-container {
+    display: block;
+    position: relative;
+    padding: 0.5em 0.5em 0.5em 0;
+    background-color: #d1dd27;
+    text-align:center;
+}
+	
+.shs-impactads {
+    background: #c1cd23 no-repeat bottom url(http://beta.sandhillschool.org/wp-content/uploads/2017/02/CHC_Impact-Outcomes2017-divisionads_SandHillSchool-mobile-bkg.png);
+    width: 100%;
+    margin: 0 auto;
+    min-height: 315px;
+    background-size: contain;
+}
+	
+.shs-impactads p {
+/*    padding: 40px 0 0 25px;*/
+    width: 90%;
+    color: white;
+    font-size: 27px;
+    line-height: 33px;
+}
+
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (max-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+/* Styles */
+}
+
+@media only screen 
+and (max-height : 320px) {
+/* Styles */
 }
