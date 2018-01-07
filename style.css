@@ -1,12 +1,11 @@
+@charset "UTF-8";
 /*
 Theme Name: Responsive Child
 Template: responsive
 Author: Gerard Greenidge
 Version: 1.0.1436554365
-Updated: 2016-01-05 1:58:44
+Updated: 2017-12-31
 */
-
-@charset "UTF-8";
 
 .badges {
     text-align: center;
@@ -285,6 +284,10 @@ h6 {
     list-style: inherit;
 }
 
+#content .shs-3col-calendar .upcoming-events {
+    padding-left: 0;
+}
+
 #content ol {
     list-style-position: outside;
     list-style-type: decimal;
@@ -296,7 +299,7 @@ h6 {
 }
 
 #container {
-  max-width: 100%;/
+  max-width: 100%;
   margin: 0 auto;
   padding: 0;
 }
@@ -835,9 +838,9 @@ div#footer ul {
     background: #fff url(/assets/testimonial-quote-line.png) no-repeat top center;
     border: 0;
     padding: 50px 20px 10px 20px;
-    font-size: 1em;
+    font-size: 1.1em;
     line-height: 1.3em;
-    font-style: normal;
+    font-style: italic;
     min-height: 70px;
     font-weight: 300;
     margin: 15px 0 15px 0;
@@ -1054,7 +1057,7 @@ border: 1px solid #ccc;
 
 /*Green Box*/
 .greenbox {
-background:#b0bc22;
+background:#c1cd23;
 padding: 20px;
 margin-bottom: 15px;
 color:#fff;
@@ -1231,8 +1234,8 @@ margin-top: 0px;
 .greenlinebox {
 clear:both;
 background:#fff;
-border:1px solid #D1DD27;
-border-bottom:15px solid #D1DD27;
+border:1px solid #c1cd23;
+border-bottom:15px solid #c1cd23;
 padding: 20px;
 margin-bottom: 15px;
 min-height: 170px;
@@ -1654,13 +1657,13 @@ ul.upcoming-events li.today {
     margin: 15px 0 15px 0;
 }
 
-ul.upcoming-events li.today a, ul#upcoming-events li.future-event a {
+ul.upcoming-events li.today a, ul#upcoming-events li.future-event a, ul#upcoming-events li.mc_school-holidays a {
     font-size: 1.2em;
     font-weight: 600;
     text-decoration: none;
 }
 
-#content .upcoming-events li.future-event {
+#content .upcoming-events li.future-event, #content .upcoming-events li.mc_school-holidays  {
 	width: 202px;
 	height: 500px;
 	float: left;
@@ -1670,6 +1673,16 @@ ul.upcoming-events li.today a, ul#upcoming-events li.future-event a {
 	font-size: 15px;
 	border-left: 1px solid #f2f2f2;
 	border-bottom: 1px solid #f2f2f2;
+}
+
+#content .shs-3col-calendar .upcoming-events li.future-event, #content .shs-3col-calendar .upcoming-events li.mc_school-holidays {
+    width: 227px;
+    height: 500px;
+    float: left;
+    padding: 0 10px 20px 10px;
+    margin: 20px 0 20px 0;
+    list-style-type: none;
+    font-size: 15px;
 }
 
 
@@ -1684,7 +1697,7 @@ ul.upcoming-events li.today a, ul#upcoming-events li.future-event a {
 }
 
 
-#content .upcoming-events li.future-event {
+#content .upcoming-events li.future-event, #content .upcoming-events li.mc_school-holidays {
     width: 227px;
     height: 500px;
     float: left;
@@ -1694,7 +1707,7 @@ ul.upcoming-events li.today a, ul#upcoming-events li.future-event a {
     font-size: 15px;
 }
 
-#content .upcoming-events li.future-event img.attachment-post-thumbnail.wp-post-image, #content .upcoming-events li.today img.attachment-post-thumbnail.wp-post-image {
+#content .upcoming-events li.future-event img.attachment-post-thumbnail.wp-post-image, #content .upcoming-events li.today img.attachment-post-thumbnail.wp-post-image, #content .upcoming-events li.mc_school-holidays img.attachment-post-thumbnail.wp-post-image {
 	border-left: 1px solid #f2f2f2;
 	border-top: 1px solid #f2f2f2;
 	border-right: 1px solid #f2f2f2;
@@ -1709,7 +1722,7 @@ ul.upcoming-events li.today a, ul#upcoming-events li.future-event a {
     text-align: center;
     font-weight: bold;
     padding: 5px;
-    background: #00BCE4 url(http://www.chconline.org/assets/calendar/tilebottom_blue.png) top no-repeat;
+    background: #00BCE4 url(/assets/calendar/tilebottom_blue.png) top no-repeat;
     margin-top: 8px;
     line-height: 1.3em;
 }
@@ -2092,12 +2105,218 @@ h3.af_heading{
 
 /**** End Annual Fund Styles *****/
 
+/*** Summer at Sand Hill School ***/
+
+h1.summer-banner {
+    background-image: url('/wp-content/uploads/2017/02/summer-banner-bkg.png');
+    border: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-position: bottom center;
+}
+
+.summer-dates{
+    border:1px solid #c1cd23;
+    margin: 0 auto;
+}
+
+h2.summer-enroll{
+    margin:0;
+    font-weight:900;
+    font-size:46px;
+}
+h2.summer-invite {
+    margin-bottom: 20px;
+}
+.summer-morning{
+    border: 1px solid #c1cd23;
+    background-color: #e2e259;
+    margin: 0 auto;
+}
+
+.summer-literacy {
+    margin: auto;
+}
+
+.summer-literacy .greenbox {
+    width: 19.4%;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    min-height: 190px;
+}
+
+
+.summer-literacy .greenbox:first-child {
+ margin-left: 2.127659574468%;
+}
+
+.summer-literacy ul {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.summer-lunch {
+    margin: 5px auto;
+    padding: inherit;
+}
+
+.summer-lunch h2 {
+    padding-top: 20px;
+}
+
+.summer-enrichment {
+    margin: auto;
+}
+
+.summer-enrichment .bluebox {
+    width: 27.3%;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    min-height: 320px;
+}
+
+.summer-enrichment .bluebox:first-child {
+    margin-left: 2.127659574468%;
+}
+
+.summer-photos .alignnone {
+    margin:20px 5px;
+}
+
+.summer-afternoon p.whitebox, .summer-morning p.whitebox, .summer-lunch p.whitebox, .summer-allday p.whitebox {
+    margin: 10px auto;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    font-size: x-large;
+}
+
+.summer-afternoon span.regular, .summer-morning span.regular, .summer-lunch span.regular, .summer-allday span.regular {
+    font-size: x-large;
+}
+
+.summer-morning .greenbox p {
+    line-height: initial;
+    height:40px;
+}
+
+.summer-morning .greenbox li{
+    line-height: normal;
+}
+
+.summer-dates ul {
+    list-style: none !important;
+    font-size: 1.2em;
+    font-weight: 300;
+    margin: 0.5em 0 1em 0 !important;
+    padding: inherit !important;
+    border: none;
+}
+
+/*** End Summer at Sand Hill School ***/
+
+/*** Open Sans Font Weights and Styles ***/
+.extra-bold{
+    font-weight:800;
+}
+
+.extra-bold-italic{
+    font-weight:800;
+    font-style:italic;
+}
+
+.bold{
+    font-weight:700;
+}
+
+.bold-italic{
+    font-weight:700;
+    font-style:italic;
+}
+
+.semi-bold{
+    font-weight:600;
+}
+
+.semi-bold-italic{
+    font-weight:600;
+    font-style:italic;
+}
+
+.regular{
+    font-weight:400;
+}
+
+.regular-italic{
+    font-weight:400;
+    font-style:italic;
+}
+
+.light{
+    font-weight:300;
+}
+
+.light-italic{
+    font-weight:300;
+    font-style:italic;
+}
+
+/*** End Open Sans Font Weights and Styles ***/
+
+/*** Sand Hill Text Color Pallette ***/
+
+.shs-green-text{
+   color: #c1cd23;
+}
+
+.shs-blue-text{
+   color: #00bce4;
+}
+
+.shs-orange-text{
+   color: #F26532;
+}
+
+.shs-gray-text{
+   color: #958d7a
+}
+
+/*** End Sand Hill Text Color Pallette ***/
+
+/*** Margins, Padding, Borders ***/
+
+.margin-none{
+   margin:0;
+}
+.margin-reset{
+   margin: inherit
+}
+
+.padding-none{
+   padding:0;
+}
+.padding-reset{
+   padding: inherit
+}
+
+/*** ***/
+
+span.author-gravtar, .post-data{
+    display:none;
+}
+
 
 /*** Media View Ports ****/
 
 @media screen and (max-width: 1024px) {
 .home_featured_event {
 margin:0 .825em 20px 0;
+}
+.pad50 {
+   padding: 0;
 }
 }
 
@@ -2153,6 +2372,63 @@ img.alignright, img.alignleft {
     text-align: center;
 }
 
+/**** Summer Mobile Styles ****/
+
+h1.summer-banner {
+    margin: 20px 0;
+}
+
+.summer-dates{
+    margin: 20px auto;
+}
+
+.summer-morning{
+    width: 100%;
+    margin: 20px auto 0 auto;
+}
+
+.summer-literacy .greenbox:first-child {
+    margin: 10px auto;
+}
+
+.summer-literacy .greenbox, .greenbox.col-140.grid.fit   {
+    width: 80%;
+    min-height: 100px;
+    margin: 10px auto !important;
+}
+
+.summer-morning .whitebox, .summer-afternoon .whitebox, .summer-allday .whitebox{
+    width:80%;
+}
+
+.summer-lunch {
+    width: inherit;
+}
+
+.summer-afternoon{
+    width:100%;
+}
+
+.summer-allday {
+    width: 100%;
+}
+
+.summer-enrichment .bluebox:first-child {
+    margin: 10px auto;
+}
+
+.summer-enrichment .bluebox, .summer-enrichment .bluebox fit, .summer-enrichment .bluebox {
+    width: 80%;
+    min-height: 100px;
+    margin: 10px auto !important;
+}
+
+.summer-photos .alignnone {
+    margin: 5px;
+}
+
+/**** End Summer Mobile Syles ****/
+
 }
 @media screen and (max-width: 800px) {
 /* Styles */
@@ -2185,7 +2461,7 @@ body.type-sandbox img.wp-post-image, body.post-type-archive-sandbox .wp-post-ima
 
 }
 
-media only screen and (max-width : 650px) {
+@media only screen and (max-width : 650px) {
 /* Styles */
 .skip-container {
     display: block;
