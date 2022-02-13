@@ -15,6 +15,12 @@ add_action( 'wp_enqueue_scripts', 'chld_thm_cfg_parent_css' );
 
 // END ENQUEUE PARENT ACTION
 
+// Adding layout/setting generator needed for the DEI Builder Template.
+require get_stylesheet_directory() . '/inc/generate-settings.php';
+
+
+
+
 function print_subnav($parent_id) {
     $pages = get_pages('child_of=' . $parent_id.'&sort_column=menu_order');
 
@@ -68,14 +74,14 @@ function print_subnav2($parent_id) {
 }
 
 register_sidebar( array(
-						  'name'          => __( 'SubNav Widget', 'responsive' ),
-						  'description'   => __( 'Area 11 - sidebar-subnav.php - Displays below the header', 'responsive' ),
-						  'id'            => 'subnav-widget',
-						  'before_title'  => '<div class="widget-title"><h3>',
-						  'after_title'   => '</h3></div>',
-						  'before_widget' => '<div id="%1$s" class="viewport-container">',
-						  'after_widget'  => '</div>'
-					  ) );
+	'name'          => __( 'SubNav Widget', 'responsive' ),
+	'description'   => __( 'Area 11 - sidebar-subnav.php - Displays below the header', 'responsive' ),
+	'id'            => 'subnav-widget',
+	'before_title'  => '<div class="widget-title"><h3>',
+	'after_title'   => '</h3></div>',
+	'before_widget' => '<div id="%1$s" class="viewport-container">',
+	'after_widget'  => '</div>'
+) );
 
 function update_sandbox_slug( $args, $post_type ) {
     if ( 'sandbox' === $post_type ) {
