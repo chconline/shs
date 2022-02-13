@@ -2,3 +2,11 @@
 
 /* For any new pages using the DEI Builder template. */
 
+/* content block theme fixes */
+.post-type-archive-content-block #wrapper,
+.page-template-dei-builder-php #wrapper { padding: 0px; }
+
+.post-type-archive-content-block .viewport-container,
+.page-template-dei-builder-php .viewport-container { max-width: none; margin: initial; padding: initial; }
+
+.single-content-block #subnav-widget { display: none; }

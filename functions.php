@@ -19,6 +19,11 @@ add_action( 'wp_enqueue_scripts', 'chld_thm_cfg_parent_css' );
 require get_stylesheet_directory() . '/inc/generate-settings.php';
 require get_stylesheet_directory() . '/css/admin.php';
 
+add_action( 'wp_enqueue_scripts', 'additional_scripts' );
+function additional_scripts() {
+  wp_enqueue_style( 'gpc-new-theme', get_stylesheet_directory_uri() . '/css/new-theme.css');
+}
+
 // Content Block Custom Post Type
 function content_block_cpt() {
 
@@ -91,6 +96,107 @@ function content_block_cpt() {
 }
 
 add_action( 'init', 'content_block_cpt', 0 );
+
+
+function get_content_block($ID) {
+$contentBlock = get_post($ID);
+
+global $post;
+	$post = $contentBlock;
+	setup_postdata($post);
+
+$class = slug(preg_replace("/\[[^)]+\]/", "", $post->post_title));
+
+	ob_start();
+		
+	echo '<div class="content-block ' . $class . '">';
+	get_template_part('acf/clones/page-content');
+	echo '</div>';
+
+	wp_reset_postdata();
+		
+	return ob_get_clean();
+}
+
+// Content Blocks - Meta Box
+function register_cb_meta_box() {
+	add_meta_box( 'meta-box-id', __( 'Shortcode', 'textdomain' ), 'cb_display_callback', 'content-block', 'side' );
+}
+add_action( 'add_meta_boxes', 'register_cb_meta_box' );
+
+function cb_display_callback($post) { ?>
+	<p>You can place this content block into your posts, pages, custom post types or widgets using the shortcode below:</p>
+	<code>[content-block id="<?php echo $post->ID; ?>"]</code>
+<?php }
+
+// Content Block - Admin Meta
+function shortcode_admin_column( $defaults ) {
+	$defaults['shortcode'] = __( 'Shortcode', 'custom-post-widget' );
+	return $defaults;
+}
+
+function shortcode_admin_row( $column_name, $ID ) {
+	if ($column_name == 'shortcode') {
+		echo '<code>[content-block id="' . $ID . '"]</code>';
+	}
+}
+
+add_filter( 'manage_edit-content-block_columns', 'shortcode_admin_column' );
+add_action( 'manage_posts_custom_column', 'shortcode_admin_row', 10, 2 );
+
+
+// Content Block - Taxonomy
+add_action( 'init', 'create_content_block_taxonomy', 0 );
+function create_content_block_taxonomy() {
+	$labels = array(
+		'name' => 'Block Types', 'taxonomy general name',
+		'singular_name' => 'Block Type', 'taxonomy singular name',
+		'search_items' =>  'Search Block Types',
+		'popular_items' => 'Popular Block Types',
+		'all_items' => 'All Block Types',
+		'parent_item' => null,
+		'parent_item_colon' => null,
+		'edit_item' => 'Edit Block Type',
+		'update_item' => 'Update Block Type',
+		'add_new_item' => 'Add New',
+		'new_item_name' => 'New Block Type Name',
+		'separate_items_with_commas' => 'Separate Block Types with commas',
+		'add_or_remove_items' => 'Add or Remove Block Types',
+		'choose_from_most_used' => 'Choose from the most used Block Types',
+		'menu_name' => 'Block Types',
+	);
+
+	register_taxonomy('block-type', 'content-block', array(
+		'hierarchical' => true,
+		'labels' => $labels,
+		'show_ui' => true,
+		'show_admin_column' => true,
+		'update_count_callback' => '_update_post_term_count',
+		'query_var' => true,
+		'rewrite' => array( 'slug' => 'content-block', "with_front" => false ),
+	));
+}
+
+
+// Converts a string to a slug.
+function slug($str){
+	$str = strtolower(trim($str));
+	$str = preg_replace('/[^a-z0-9-]/', '-', $str);
+	$str = preg_replace('/-+/', "-", $str);
+	return $str;
+}
+
+// Gets a string between two strings.
+function get_string_between($string, $start, $end){
+	$string = ' ' . $string;
+	$ini = strpos($string, $start);
+	if ($ini == 0) return '';
+	$ini += strlen($start);
+	$len = strpos($string, $end, $ini) - $ini;
+	return substr($string, $ini, $len);
+  }
+  
+  add_filter('acf/settings/remove_wp_meta_box', '__return_true');
 
 
 function print_subnav($parent_id) {
