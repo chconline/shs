@@ -1,6 +1,39 @@
 @import "base.min.css";
 
-/* For any new pages using the DEI Builder template. */
+/* Variables (vars) */
+:root {
+
+    /* Colors */
+    --black: #0B111E;
+    
+    --white: #FFFFFF;
+    --off-white: #F8F7F7;
+
+    --green: #C1CD23;
+    --light-green: #F1F4A4;
+
+    --blue: #386ACF;
+    --navy: #122242;
+
+    --red: #F26522;
+
+    /* Shadows */
+    --card-shadow-small: 0px 4px 4px #D5D9E3;;
+    --card-shadow-large: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Minor Site Fixes */
+ul#menu-global { text-align: center; }
+ul#menu-global > li:not(#menu-item-3829, .mobile-parent-login-button, #menu-item-3830) { 
+    display: inline-block;
+    float: none;
+}
+
+ul#menu-global ul.sub-menu li { text-align: left; }
+
+
+
+/* For any new pages using the DEI Builder template. Most of this will eventually be rewritten in Sass */
 
 /* content block theme fixes */
 .post-type-archive-content-block #wrapper,
@@ -10,3 +43,12 @@
 .page-template-dei-builder-php .viewport-container { max-width: none; margin: initial; padding: initial; }
 
 .single-content-block #subnav-widget { display: none; }
+
+
+
+/* Summer */
+#intro .wrapper p {
+    color: var(--red);
+    text-transform: uppercase; 
+    font-weight: bold;
+}
