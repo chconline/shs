@@ -14,7 +14,7 @@ if (have_rows('blocks')) { $itemNumber = 1;
 					if ($contentType == 'wrapper') {
 						get_template_part('acf/content/' . $contentType);
 					} elseif ($contentType == 'wrapper-end') {
-						echo '</div></div>';
+						echo '</div>';
 					} else {
 						echo '<div class="' . $contentType . ' content-item-' . $itemNumber . '">';
 							get_template_part('acf/content/' . $contentType);
