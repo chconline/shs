@@ -15,8 +15,9 @@ add_action( 'wp_enqueue_scripts', 'chld_thm_cfg_parent_css' );
 
 // END ENQUEUE PARENT ACTION
 
-// Adding layout/setting generator needed for the DEI Builder Template.
+// Adding required files/functionality for the DEI Builder Template.
 require get_stylesheet_directory() . '/inc/generate-settings.php';
+require get_stylesheet_directory() . '/css/admin.php';
 
 // Content Block Custom Post Type
 function content_block_cpt() {

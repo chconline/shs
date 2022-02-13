@@ -76,8 +76,8 @@
                     "min": "",
                     "max": "",
                     "acfe_flexible_render_template": "acf\/clones\/page-content.php",
-                    "acfe_flexible_render_style": "css\/index.css",
-                    "acfe_flexible_render_script": "js\/theme.js",
+                    "acfe_flexible_render_style": "css\/new-theme.css",
+                    "acfe_flexible_render_script": "",
                     "acfe_flexible_settings": [
                         "group_6201a0a05e7b6",
                         "group_6201a1d6b77d7"
@@ -118,7 +118,7 @@
                     "min": "",
                     "max": "",
                     "acfe_flexible_render_template": "acf\/clones\/page-content.php",
-                    "acfe_flexible_render_style": "css\/theme.css",
+                    "acfe_flexible_render_style": "css\/new-theme.css",
                     "acfe_flexible_render_script": "js\/theme.js",
                     "acfe_flexible_settings": [
                         "group_6201a1d6b77d7"
@@ -319,22 +319,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "all"
-            },
-            {
-                "param": "post_type",
-                "operator": "!=",
-                "value": "all"
-            },
-            {
-                "param": "post_type",
-                "operator": "!=",
-                "value": "page"
-            },
-            {
-                "param": "post_type",
-                "operator": "!=",
-                "value": "all"
+                "value": "content-block"
             }
         ]
     ],
@@ -365,5 +350,5 @@
         }
     },
     "acfe_note": "",
-    "modified": 1644789115
+    "modified": 1644789361
 }
