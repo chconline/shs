@@ -1,6 +1,8 @@
 @import "base.min.css";
 
-/* Variables (vars) */
+/* ------------------------------------- */
+/* Variables (vars) -------------------- */
+/* ------------------------------------- */
 :root {
 
     /* Colors */
@@ -26,9 +28,14 @@
 
     /* Font Families */
     --font-primary: 'Playfair Display', 'sans-serif';
+    --font-secondary: 'Open Sans';
 }
 
-/* Minor Site Fixes */
+
+
+/* ------------------------------------- */
+/* Minor Theme Fixes -------------------- */
+/* ------------------------------------- */
 ul#menu-global { text-align: center; }
 ul#menu-global > li:not(#menu-item-3829, .mobile-parent-login-button, #menu-item-3830) { 
     display: inline-block;
@@ -39,9 +46,12 @@ ul#menu-global ul.sub-menu li { text-align: left; }
 
 
 
+
 /* For any new pages using the DEI Builder template. Most of this will eventually be rewritten in Sass */
 
-/* content block theme fixes */
+/* ------------------------------------- */
+/* Content Block Theme Fixes ----------- */
+/* ------------------------------------- */
 .post-type-archive-content-block #wrapper,
 .page-template-dei-builder-php #wrapper { padding: 0px; }
 
@@ -56,7 +66,12 @@ ul#menu-global ul.sub-menu li { text-align: left; }
 
 
 
-/* Summer */
+
+/* ------------------------------------- */
+/* Summer - Landing Page --------------- */
+/* ------------------------------------- */
+
+/* Introduction */
 #intro h3 {
     color: var(--red);
     text-transform: uppercase;  font-weight: bold;
@@ -65,20 +80,61 @@ ul#menu-global ul.sub-menu li { text-align: left; }
 
 #intro h4 {
     font-family: var(--font-primary);
+    font-size: 26px; line-height: 36px;
     margin: 1.5rem 0;
 }
 
+#intro h1 { font-size: 54px; line-height: 60px; }
 
+
+/* Flier Layout */
 .flier {
     border-radius: var(--rounded);
     border-top: 10px solid var(--light-green);
     box-shadow: var(--card-shadow-large);
     max-width: 1000px;
+}
+
+.flier > div {
     padding: 25px 65px 50px;
 }
 
+.flier h6, .flier * {
+    color: var(--black);
+    font-size: 15px; line-height: 21px;
+}
+
+.flier h2, .flier h3, .flier h4, .flier h5 {
+    color: var(--navy);
+}
+
+.flier h2 {
+    font-size: 32px; line-height: 36px;
+    max-width: 778px; margin: 0px auto 20px;
+}
+
+.flier h4 {
+    font-size: 24px; line-height: 32px;
+    font-weight: 600; 
+}
+
+.flier h5 {
+    font-size: 18px; line-height: 24px;
+    font-weight: bold; text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.flier hr {
+    max-width: 211px; margin: 50px auto;
+    height: 2px;
+    background-color: var(--light-green);
+}
+
+.flier .item .line-separator:first-of-type hr { margin: 10px auto 30px; }
+
 .flier a {
     background-image: none;
+    color: var(--blue);
 } .flier a:hover { background-image: none; }
 
 
