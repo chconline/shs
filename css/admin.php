@@ -108,6 +108,23 @@ function acf_minor_updates() {
     .acfe-flexible-placeholder.-preview .grid-container h6,
     .acfe-flexible-placeholder.-preview .grid-container p { margin: 0px 0px 15px; }
 
+    .acfe-flexible-placeholder.-preview h1 { font-size: 54px; line-height: 60px; }
+    .acfe-flexible-placeholder.-preview h2 { font-size: 32px; line-height: 36px; }
+    .acfe-flexible-placeholder.-preview h3 { font-size: 28px; line-height: 48px; font-weight: normal; }
+    .acfe-flexible-placeholder.-preview h4 { font-size: 26px; line-height: 36px; font-weight: normal; }
+    .acfe-flexible-placeholder.-preview h5 { font-size: 18px; line-height: 24px; font-weight: normal; }
+    .acfe-flexible-placeholder.-preview h6 { font-size: 16px; line-height: 22px; font-weight: normal; }
+
+    .acfe-flexible-placeholder.-preview h1, 
+    .acfe-flexible-placeholder.-preview h2 { font-family: Playfair Display; font-weight: 500; }
+
+    .acfe-flexible-placeholder.-preview h1, 
+    .acfe-flexible-placeholder.-preview h2, 
+    .acfe-flexible-placeholder.-preview h3, 
+    .acfe-flexible-placeholder.-preview h4, 
+    .acfe-flexible-placeholder.-preview h5, 
+    .acfe-flexible-placeholder.-preview h6 { color: #122242; margin-top: 0px; }
+
     .acfe-flexible-placeholder.-preview .grid-container a { text-decoration: none; }
     .acfe-flexible-placeholder.-preview .grid-container img { max-width: 100%; }
 
