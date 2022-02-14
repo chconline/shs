@@ -41,29 +41,29 @@
 
 
 /* Heading Styles - Group */
-h1, h2, h3, h4, h5, h6 { color: #122242 !important; }
-h1, h2, h3, h4, h5     { font-family: Playfair Display !important; }
-h2, h3, h4, h5 	       { font-weight: normal !important; }
-h2, h3, h4, h5, h6     { letter-spacing: 0.252px !important; }
-h3, h4, h5, h6         { line-height: 40px !important; }
+h1, h2, h3, h4, h5, h6 { color: #122242; }
+h1, h2, h3, h4, h5     { font-family: Playfair Display; }
+h2, h3, h4, h5 	       { font-weight: normal; }
+h2, h3, h4, h5, h6     { letter-spacing: 0.252px; }
+h3, h4, h5, h6         { line-height: 40px; }
 
 /* Heading Styles - Single */
-h1 { font-size: 64px !important; line-height: 72px !important; letter-spacing: 0.1px !important; font-weight: bold !important; }
-h2 { font-size: 42px !important; line-height: 48px !important; }
-h3 { font-size: 36px !important; }
-h4 { font-size: 30px !important; }
-h5 { font-size: 28px !important; }
-h6 { font-size: 18px !important; font-weight: bold !important; text-transform: uppercase !important; }
+h1 { font-size: 64px; line-height: 72px; letter-spacing: 0.1px; font-weight: bold; }
+h2 { font-size: 42px; line-height: 48px; }
+h3 { font-size: 36px; }
+h4 { font-size: 30px; }
+h5 { font-size: 28px; }
+h6 { font-size: 18px; font-weight: bold; text-transform: uppercase; }
 
 /* Heading Styles - Mobile */
 @media screen and (max-width: 768px) {
-	h1 { font-size: 50px !important; line-height: 67px !important; }
-	h2 { font-size: 33px !important; line-height: 45px !important; }
-	h3 { font-size: 27px !important; }
-	h4 { font-size: 21px !important; }
-	h5 { font-size: 19px !important; }
+	h1 { font-size: 50px; line-height: 67px; }
+	h2 { font-size: 33px; line-height: 45px; }
+	h3 { font-size: 27px; }
+	h4 { font-size: 21px; }
+	h5 { font-size: 19px; }
 	
-	h3, h4, h5, h6 { line-height: 25px !important; }
+	h3, h4, h5, h6 { line-height: 25px; }
 }
 
 /* Button Styles - Group */
