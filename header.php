@@ -32,7 +32,7 @@ if ( !defined( 'ABSPATH' ) ) {
 		<link rel="profile" href="http://gmpg.org/xfn/11"/>
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>"/>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,400,700,600,800' rel='stylesheet' type='text/css'>
-		<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,800,800i&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet">
 		
 		<?php wp_head(); ?>
 		
