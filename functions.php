@@ -15,188 +15,7 @@ add_action( 'wp_enqueue_scripts', 'chld_thm_cfg_parent_css' );
 
 // END ENQUEUE PARENT ACTION
 
-// Adding required files/functionality for the DEI Builder Template.
-require get_stylesheet_directory() . '/inc/generate-settings.php';
-require get_stylesheet_directory() . '/css/admin.php';
-
-add_action( 'wp_enqueue_scripts', 'additional_scripts' );
-function additional_scripts() {
-  wp_enqueue_style( 'gpc-new-theme', get_stylesheet_directory_uri() . '/css/new-theme.css');
-}
-
-// Content Block Custom Post Type
-function content_block_cpt() {
-
-	/**
-	 * Post Type: Content Blocks.
-	 */
-
-	$labels = [
-		"name" => __( "Content Blocks", "gpc" ),
-		"singular_name" => __( "Content Block", "gpc" ),
-		"menu_name" => __( "Content Blocks", "gpc" ),
-		"all_items" => __( "All Content Blocks", "gpc" ),
-		"add_new" => __( "Add New", "gpc" ),
-		"add_new_item" => __( "Add New Content Block", "gpc" ),
-		"edit_item" => __( "Edit Content Block", "gpc" ),
-		"new_item" => __( "New Content Block", "gpc" ),
-		"view_item" => __( "View Content Block", "gpc" ),
-		"view_items" => __( "View Content Blocks", "gpc" ),
-		"search_items" => __( "Search Content Blocks", "gpc" ),
-		"not_found" => __( "No Content Blocks found", "gpc" ),
-		"not_found_in_trash" => __( "No Content Blocks found in trash", "gpc" ),
-		"parent" => __( "Parent Content Block", "gpc" ),
-		"featured_image" => __( "Featured image", "gpc" ),
-		"set_featured_image" => __( "Set featured image", "gpc" ),
-		"remove_featured_image" => __( "Remove featured image", "gpc" ),
-		"use_featured_image" => __( "Use as featured image", "gpc" ),
-		"archives" => __( "Content Block Archives", "gpc" ),
-		"insert_into_item" => __( "Insert into Content Block", "gpc" ),
-		"uploaded_to_this_item" => __( "Uploaded to this Content Block", "gpc" ),
-		"filter_items_list" => __( "Filter Content Blocks List", "gpc" ),
-		"items_list_navigation" => __( "Content Blocks List Navigation", "gpc" ),
-		"items_list" => __( "Content Blocks List", "gpc" ),
-		"attributes" => __( "Content Blocks Attributes", "gpc" ),
-		"name_admin_bar" => __( "Content Block", "gpc" ),
-		"item_published" => __( "Content Block published", "gpc" ),
-		"item_published_privately" => __( "Content Block published privately", "gpc" ),
-		"item_reverted_to_draft" => __( "Content Block reverted to draft", "gpc" ),
-		"item_scheduled" => __( "Content Block scheduled", "gpc" ),
-		"item_updated" => __( "Content Block updated", "gpc" ),
-		"parent_item_colon" => __( "Parent Content Block", "gpc" ),
-	];
-
-	$args = [
-		"label" => __( "Content Blocks", "gpc" ),
-		"labels" => $labels,
-		"description" => "",
-		"public" => true,
-		"publicly_queryable" => true,
-		"show_ui" => true,
-		"show_in_rest" => true,
-		"rest_base" => "",
-		"rest_controller_class" => "WP_REST_Posts_Controller",
-		"has_archive" => true,
-		"show_in_menu" => true,
-		"show_in_nav_menus" => true,
-		"delete_with_user" => false,
-		"exclude_from_search" => true,
-		"capability_type" => "post",
-		"map_meta_cap" => true,
-		"hierarchical" => false,
-		"rewrite" => [ "slug" => "content-block", "with_front" => false ],
-		"query_var" => true,
-		"menu_position" => 54.9,
-		"menu_icon" => "dashicons-networking",
-		"supports" => [ "title", "custom-fields", "revisions", "editor" ],
-		"taxonomies" => [ "block-type" ],
-	];
-
-	register_post_type( "content-block", $args );
-}
-
-add_action( 'init', 'content_block_cpt', 0 );
-
-
-function get_content_block($ID) {
-$contentBlock = get_post($ID);
-
-global $post;
-	$post = $contentBlock;
-	setup_postdata($post);
-
-$class = slug(preg_replace("/\[[^)]+\]/", "", $post->post_title));
-
-	ob_start();
-		
-	echo '<div class="content-block ' . $class . '">';
-	get_template_part('acf/clones/page-content');
-	echo '</div>';
-
-	wp_reset_postdata();
-		
-	return ob_get_clean();
-}
-
-// Content Blocks - Meta Box
-function register_cb_meta_box() {
-	add_meta_box( 'meta-box-id', __( 'Shortcode', 'textdomain' ), 'cb_display_callback', 'content-block', 'side' );
-}
-add_action( 'add_meta_boxes', 'register_cb_meta_box' );
-
-function cb_display_callback($post) { ?>
-	<p>You can place this content block into your posts, pages, custom post types or widgets using the shortcode below:</p>
-	<code>[content-block id="<?php echo $post->ID; ?>"]</code>
-<?php }
-
-// Content Block - Admin Meta
-function shortcode_admin_column( $defaults ) {
-	$defaults['shortcode'] = __( 'Shortcode', 'custom-post-widget' );
-	return $defaults;
-}
-
-function shortcode_admin_row( $column_name, $ID ) {
-	if ($column_name == 'shortcode') {
-		echo '<code>[content-block id="' . $ID . '"]</code>';
-	}
-}
-
-add_filter( 'manage_edit-content-block_columns', 'shortcode_admin_column' );
-add_action( 'manage_posts_custom_column', 'shortcode_admin_row', 10, 2 );
-
-
-// Content Block - Taxonomy
-add_action( 'init', 'create_content_block_taxonomy', 0 );
-function create_content_block_taxonomy() {
-	$labels = array(
-		'name' => 'Block Types', 'taxonomy general name',
-		'singular_name' => 'Block Type', 'taxonomy singular name',
-		'search_items' =>  'Search Block Types',
-		'popular_items' => 'Popular Block Types',
-		'all_items' => 'All Block Types',
-		'parent_item' => null,
-		'parent_item_colon' => null,
-		'edit_item' => 'Edit Block Type',
-		'update_item' => 'Update Block Type',
-		'add_new_item' => 'Add New',
-		'new_item_name' => 'New Block Type Name',
-		'separate_items_with_commas' => 'Separate Block Types with commas',
-		'add_or_remove_items' => 'Add or Remove Block Types',
-		'choose_from_most_used' => 'Choose from the most used Block Types',
-		'menu_name' => 'Block Types',
-	);
-
-	register_taxonomy('block-type', 'content-block', array(
-		'hierarchical' => true,
-		'labels' => $labels,
-		'show_ui' => true,
-		'show_admin_column' => true,
-		'update_count_callback' => '_update_post_term_count',
-		'query_var' => true,
-		'rewrite' => array( 'slug' => 'content-block', "with_front" => false ),
-	));
-}
-
-
-// Converts a string to a slug.
-function slug($str){
-	$str = strtolower(trim($str));
-	$str = preg_replace('/[^a-z0-9-]/', '-', $str);
-	$str = preg_replace('/-+/', "-", $str);
-	return $str;
-}
-
-// Gets a string between two strings.
-function get_string_between($string, $start, $end){
-	$string = ' ' . $string;
-	$ini = strpos($string, $start);
-	if ($ini == 0) return '';
-	$ini += strlen($start);
-	$len = strpos($string, $end, $ini) - $ini;
-	return substr($string, $ini, $len);
-  }
-  
-  add_filter('acf/settings/remove_wp_meta_box', '__return_true');
+add_filter('acf/settings/remove_wp_meta_box', '__return_true');
 
 
 function print_subnav($parent_id) {
@@ -569,3 +388,191 @@ add_action('wp_footer', 'masonry_js_cdn');
 function masonry_js_cdn() { ?>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
 <?php }
+
+
+
+
+
+
+
+
+// Adding required files/functionality for the DEI Builder Template.
+require get_stylesheet_directory() . '/inc/generate-settings.php';
+require get_stylesheet_directory() . '/css/admin.php';
+
+add_action( 'wp_enqueue_scripts', 'additional_scripts' );
+function additional_scripts() {
+  wp_enqueue_style( 'gpc-new-theme', get_stylesheet_directory_uri() . '/css/new-theme.css');
+}
+
+// Content Block Custom Post Type
+function content_block_cpt() {
+
+	/**
+	 * Post Type: Content Blocks.
+	 */
+
+	$labels = [
+		"name" => __( "Content Blocks", "gpc" ),
+		"singular_name" => __( "Content Block", "gpc" ),
+		"menu_name" => __( "Content Blocks", "gpc" ),
+		"all_items" => __( "All Content Blocks", "gpc" ),
+		"add_new" => __( "Add New", "gpc" ),
+		"add_new_item" => __( "Add New Content Block", "gpc" ),
+		"edit_item" => __( "Edit Content Block", "gpc" ),
+		"new_item" => __( "New Content Block", "gpc" ),
+		"view_item" => __( "View Content Block", "gpc" ),
+		"view_items" => __( "View Content Blocks", "gpc" ),
+		"search_items" => __( "Search Content Blocks", "gpc" ),
+		"not_found" => __( "No Content Blocks found", "gpc" ),
+		"not_found_in_trash" => __( "No Content Blocks found in trash", "gpc" ),
+		"parent" => __( "Parent Content Block", "gpc" ),
+		"featured_image" => __( "Featured image", "gpc" ),
+		"set_featured_image" => __( "Set featured image", "gpc" ),
+		"remove_featured_image" => __( "Remove featured image", "gpc" ),
+		"use_featured_image" => __( "Use as featured image", "gpc" ),
+		"archives" => __( "Content Block Archives", "gpc" ),
+		"insert_into_item" => __( "Insert into Content Block", "gpc" ),
+		"uploaded_to_this_item" => __( "Uploaded to this Content Block", "gpc" ),
+		"filter_items_list" => __( "Filter Content Blocks List", "gpc" ),
+		"items_list_navigation" => __( "Content Blocks List Navigation", "gpc" ),
+		"items_list" => __( "Content Blocks List", "gpc" ),
+		"attributes" => __( "Content Blocks Attributes", "gpc" ),
+		"name_admin_bar" => __( "Content Block", "gpc" ),
+		"item_published" => __( "Content Block published", "gpc" ),
+		"item_published_privately" => __( "Content Block published privately", "gpc" ),
+		"item_reverted_to_draft" => __( "Content Block reverted to draft", "gpc" ),
+		"item_scheduled" => __( "Content Block scheduled", "gpc" ),
+		"item_updated" => __( "Content Block updated", "gpc" ),
+		"parent_item_colon" => __( "Parent Content Block", "gpc" ),
+	];
+
+	$args = [
+		"label" => __( "Content Blocks", "gpc" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"has_archive" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => true,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => [ "slug" => "content-block", "with_front" => false ],
+		"query_var" => true,
+		"menu_position" => 54.9,
+		"menu_icon" => "dashicons-networking",
+		"supports" => [ "title", "custom-fields", "revisions", "editor" ],
+		"taxonomies" => [ "block-type" ],
+	];
+
+	register_post_type( "content-block", $args );
+}
+
+add_action( 'init', 'content_block_cpt', 0 );
+
+
+function get_content_block($ID) {
+$contentBlock = get_post($ID);
+
+global $post;
+	$post = $contentBlock;
+	setup_postdata($post);
+
+$class = slug(preg_replace("/\[[^)]+\]/", "", $post->post_title));
+
+	ob_start();
+		
+	echo '<div class="content-block ' . $class . '">';
+	get_template_part('acf/clones/page-content');
+	echo '</div>';
+
+	wp_reset_postdata();
+		
+	return ob_get_clean();
+}
+
+// Content Blocks - Meta Box
+function register_cb_meta_box() {
+	add_meta_box( 'meta-box-id', __( 'Shortcode', 'textdomain' ), 'cb_display_callback', 'content-block', 'side' );
+}
+add_action( 'add_meta_boxes', 'register_cb_meta_box' );
+
+function cb_display_callback($post) { ?>
+	<p>You can place this content block into your posts, pages, custom post types or widgets using the shortcode below:</p>
+	<code>[content-block id="<?php echo $post->ID; ?>"]</code>
+<?php }
+
+// Content Block - Admin Meta
+function shortcode_admin_column( $defaults ) {
+	$defaults['shortcode'] = __( 'Shortcode', 'custom-post-widget' );
+	return $defaults;
+}
+
+function shortcode_admin_row( $column_name, $ID ) {
+	if ($column_name == 'shortcode') {
+		echo '<code>[content-block id="' . $ID . '"]</code>';
+	}
+}
+
+add_filter( 'manage_edit-content-block_columns', 'shortcode_admin_column' );
+add_action( 'manage_posts_custom_column', 'shortcode_admin_row', 10, 2 );
+
+
+// Content Block - Taxonomy
+add_action( 'init', 'create_content_block_taxonomy', 0 );
+function create_content_block_taxonomy() {
+	$labels = array(
+		'name' => 'Block Types', 'taxonomy general name',
+		'singular_name' => 'Block Type', 'taxonomy singular name',
+		'search_items' =>  'Search Block Types',
+		'popular_items' => 'Popular Block Types',
+		'all_items' => 'All Block Types',
+		'parent_item' => null,
+		'parent_item_colon' => null,
+		'edit_item' => 'Edit Block Type',
+		'update_item' => 'Update Block Type',
+		'add_new_item' => 'Add New',
+		'new_item_name' => 'New Block Type Name',
+		'separate_items_with_commas' => 'Separate Block Types with commas',
+		'add_or_remove_items' => 'Add or Remove Block Types',
+		'choose_from_most_used' => 'Choose from the most used Block Types',
+		'menu_name' => 'Block Types',
+	);
+
+	register_taxonomy('block-type', 'content-block', array(
+		'hierarchical' => true,
+		'labels' => $labels,
+		'show_ui' => true,
+		'show_admin_column' => true,
+		'update_count_callback' => '_update_post_term_count',
+		'query_var' => true,
+		'rewrite' => array( 'slug' => 'content-block', "with_front" => false ),
+	));
+}
+
+
+// Converts a string to a slug.
+function slug($str){
+	$str = strtolower(trim($str));
+	$str = preg_replace('/[^a-z0-9-]/', '-', $str);
+	$str = preg_replace('/-+/', "-", $str);
+	return $str;
+}
+
+// Gets a string between two strings.
+function get_string_between($string, $start, $end){
+	$string = ' ' . $string;
+	$ini = strpos($string, $start);
+	if ($ini == 0) return '';
+	$ini += strlen($start);
+	$len = strpos($string, $end, $ini) - $ini;
+	return substr($string, $ini, $len);
+}
