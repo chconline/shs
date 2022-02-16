@@ -4,51 +4,53 @@
 /* Variables (vars) -------------------- */
 /* ------------------------------------- */
 :root {
+  /* Colors */
+  --black: #0b111e;
+  --off-black: #4d545d;
 
-    /* Colors */
-    --black: #0B111E;
-    --off-black: #4D545D;
-    
-    --white: #FFFFFF;
-    --off-white: #F8F7F7;
+  --white: #ffffff;
+  --off-white: #f8f7f7;
 
-    --green: #C1CD23;
-    --light-green: #F1F4A4;
+  --green: #c1cd23;
+  --light-green: #f1f4a4;
 
-    --blue: #386ACF;
-    --navy: #122242;
+  --blue: #386acf;
+  --navy: #122242;
 
-    --red: #F26522;
+  --red: #f26522;
 
-    /* Shadows */
-    --card-shadow-small: 0px 4px 4px #D5D9E3;;
-    --card-shadow-large: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  /* Shadows */
+  --card-shadow-small: 0px 4px 4px #d5d9e3;
+  --card-shadow-large: 4px 4px 10px rgba(0, 0, 0, 0.1);
 
-    /* Border Properties */
-    --rounded: 8px;
+  /* Border Properties */
+  --rounded: 8px;
 
-    /* Font Families */
-    --font-primary: 'Playfair Display', 'sans-serif';
-    --font-secondary: 'Open Sans';
+  /* Font Families */
+  --font-primary: "Playfair Display", "sans-serif";
+  --font-secondary: "Open Sans";
 }
-
-
 
 /* ------------------------------------- */
 /* Minor Theme Fixes -------------------- */
 /* ------------------------------------- */
-html, body { overflow-x: hidden !important; }
-
-ul#menu-global { text-align: center; }
-ul#menu-global > li:not(#menu-item-3829, .mobile-parent-login-button, #menu-item-3830) { 
-    display: inline-block;
-    float: none;
+html,
+body {
+  overflow-x: hidden !important;
 }
 
-ul#menu-global ul.sub-menu li { text-align: left; }
+ul#menu-global {
+  text-align: center;
+}
+ul#menu-global
+  > li:not(#menu-item-3829, .mobile-parent-login-button, #menu-item-3830) {
+  display: inline-block;
+  float: none;
+}
 
-
-
+ul#menu-global ul.sub-menu li {
+  text-align: left;
+}
 
 /* For any new pages using the DEI Builder template. Most of this will eventually be rewritten in Sass */
 
@@ -56,19 +58,24 @@ ul#menu-global ul.sub-menu li { text-align: left; }
 /* Content Block Theme Fixes ----------- */
 /* ------------------------------------- */
 .post-type-archive-content-block #wrapper,
-.page-template-dei-builder-php #wrapper { padding: 0px; }
-
-.post-type-archive-content-block .viewport-container,
-.page-template-dei-builder-php .viewport-container { max-width: none; margin: initial; padding: initial; }
-
-.single-content-block #subnav-widget { display: none; }
-
-.grid-container {
-    max-width: 1180px;
+.page-template-dei-builder-php #wrapper {
+  padding: 0px;
 }
 
+.post-type-archive-content-block .viewport-container,
+.page-template-dei-builder-php .viewport-container {
+  max-width: none;
+  margin: initial;
+  padding: initial;
+}
 
+.single-content-block #subnav-widget {
+  display: none;
+}
 
+.grid-container {
+  max-width: 1180px;
+}
 
 /* ------------------------------------- */
 /* Theme Styles ------------------------ */
@@ -76,63 +83,102 @@ ul#menu-global ul.sub-menu li { text-align: left; }
 
 /* DEI Builder */
 /* ----------- */
-.page-template-dei-builder #wrapper { 
-    background-color: var(--off-white); 
-    margin: 0px auto !important;
+.page-template-dei-builder #wrapper {
+  background-color: var(--off-white);
+  margin: 0px auto !important;
 }
 
-.page-template-dei-builder #footer { margin-top: 0px !important; }
-
+.page-template-dei-builder #footer {
+  margin-top: 0px !important;
+}
 
 /* Grid */
 /* ---- */
-.grid-display { gap: 50px; min-width: 0; min-height: 0; }
-.grid-display .block { min-width: 0; }
-.block .masonry-item { margin-bottom: 50px; }
-.block .masonry-item:last-child { margin-bottom: 0px; }
-
-@media screen and (max-width: 1024px) { 
-  .grid-display { gap: 25px; } 
-  .block .masonry-item { margin-bottom: 25px; }
+.grid-display {
+  gap: 50px;
+  min-width: 0;
+  min-height: 0;
+}
+.grid-display .block {
+  min-width: 0;
+}
+.block .masonry-item {
+  margin-bottom: 50px;
+}
+.block .masonry-item:last-child {
+  margin-bottom: 0px;
 }
 
-.grid-display.columns-1 { gap: 0px; }
+@media screen and (max-width: 1024px) {
+  .grid-display {
+    gap: 25px;
+  }
+  .block .masonry-item {
+    margin-bottom: 25px;
+  }
+}
 
+.grid-display.columns-1 {
+  gap: 0px;
+}
 
 /* Layouts */
 /* ------- */
 
 /* Post Query */
-.post-query .post-image-background { background-size: cover; background-position: center; }
+.post-query .post-image-background {
+  background-size: cover;
+  background-position: center;
+}
 
-.post-query .block > div > div:last-child *:last-child { margin-bottom: 0px; }
-.post-query .post-image { margin-bottom: 15px; }
+.post-query .block > div > div:last-child *:last-child {
+  margin-bottom: 0px;
+}
+.post-query .post-image {
+  margin-bottom: 15px;
+}
 
-.post-query .post-author, .post-query .post-date { display: inline-block; margin-right: 2px; }
+.post-query .post-author,
+.post-query .post-date {
+  display: inline-block;
+  margin-right: 2px;
+}
 
-.post-query .pagination { margin-top: 40px; }
-
-
+.post-query .pagination {
+  margin-top: 40px;
+}
 
 /* Video Background */
 /* ---------------- */
-.video-background.layout-wrapper { position: relative; overflow: hidden; transition: .3s; }
-.video-background.layout-wrapper .grid-container { position: relative; z-index: 1; }
+.video-background.layout-wrapper {
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.video-background.layout-wrapper .grid-container {
+  position: relative;
+  z-index: 1;
+}
 
 .video-background.layout-wrapper .background-video {
-  position: absolute; top: 0; right: 0;
-  min-width: 100%; min-height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
 
-.video-background.layout-wrapper video { width: 100%; max-width: 100%; height: auto; }
+.video-background.layout-wrapper video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
 
 @media screen and (max-width: 1000px) {
-  .video-background.layout-wrapper video { object-fit: cover; }
+  .video-background.layout-wrapper video {
+    object-fit: cover;
+  }
 }
-
-
-
-
 
 /* ------------------------------------- */
 /* Summer - Landing Page --------------- */
@@ -140,172 +186,227 @@ ul#menu-global ul.sub-menu li { text-align: left; }
 
 /* Introduction */
 #intro h3 {
-    color: var(--red);
-    text-transform: uppercase;  font-weight: bold;
-    font-size: clamp(22px, 4vw, 28px); line-height: clamp(29px, 4vw, 48px);
+  color: var(--red);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: clamp(22px, 4vw, 28px);
+  line-height: clamp(29px, 4vw, 48px);
 }
 
 #intro h4 {
-    font-family: var(--font-primary);
-    font-size: clamp(22px, 3vw, 26px); line-height: clamp(30px, 3vw, 36px);
-    margin: 1.5rem 0;
+  font-family: var(--font-primary);
+  font-size: clamp(22px, 3vw, 26px);
+  line-height: clamp(30px, 3vw, 36px);
+  margin: 1.5rem 0;
 }
 
-#intro h1 { font-size: clamp(34px, 5vw, 54px); line-height: clamp(44px, 5vw, 60px); }
-
+#intro h1 {
+  font-size: clamp(34px, 5vw, 54px);
+  line-height: clamp(44px, 5vw, 60px);
+}
 
 /* Flier Layout */
 .flier {
-    border-radius: var(--rounded);
-    border-top: 10px solid var(--light-green);
-    box-shadow: var(--card-shadow-large);
-    max-width: 1000px;
-    background-color: var(--white);
+  border-radius: var(--rounded);
+  border-top: 10px solid var(--light-green);
+  box-shadow: var(--card-shadow-large);
+  max-width: 1000px;
+  background-color: var(--white);
 }
 
-.flier > div {  padding: 25px 65px 50px; }
+.flier > div {
+  padding: 25px 65px 50px;
+}
 
 @media (max-width: 1024px) {
-    .flier > div {  padding: 25px 30px 25px; }
+  .flier > div {
+    padding: 25px 30px 25px;
+  }
 }
 
 @media (max-width: 768px) {
-    .flier { margin: 0px 10px; }
-    .flier > div {  padding: 25px 10px 25px; }
+  .flier {
+    margin: 0px 10px;
+  }
+  .flier > div {
+    padding: 25px 10px 25px;
+  }
 }
 
-.flier h6, .flier * {
-    color: var(--black);
-    font-size: 15px; line-height: 21px;
+.flier h6,
+.flier * {
+  color: var(--black);
+  font-size: 15px;
+  line-height: 21px;
 }
 
-.flier h2, .flier h3, .flier h4, .flier h5 {
-    color: var(--navy);
+.flier h2,
+.flier h3,
+.flier h4,
+.flier h5 {
+  color: var(--navy);
 }
 
 .flier h2 {
-    font-size: clamp(24px, 5vw, 32px); line-height: clamp(29px, 5vw, 36px);
-    max-width: 778px; margin: 0px auto 20px;
+  font-size: clamp(24px, 5vw, 32px);
+  line-height: clamp(29px, 5vw, 36px);
+  max-width: 778px;
+  margin: 0px auto 20px;
 }
 
 .flier h4 {
-    font-size: clamp(22px, 3vw, 24px); line-height: clamp(30px, 3vw, 32px);
-    font-weight: 600; 
-    margin-bottom: 15px;
+  font-size: clamp(22px, 3vw, 24px);
+  line-height: clamp(30px, 3vw, 32px);
+  font-weight: 600;
+  margin-bottom: 15px;
 }
 
 .flier h5 {
-    font-size: clamp(16px, 3vw, 18px); line-height: clamp(22px, 3vw, 24px);
-    font-weight: bold; text-transform: uppercase;
-    letter-spacing: 1.5px;
+  font-size: clamp(16px, 3vw, 18px);
+  line-height: clamp(22px, 3vw, 24px);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 .flier hr {
-    max-width: 211px; margin: 10px auto 30px;
-    height: 2px;
-    background-color: var(--light-green);
+  max-width: 211px;
+  margin: 10px auto 30px;
+  height: 2px;
+  background-color: var(--light-green);
 }
 
 /* This applies extra margin to all line separators after the first one in the layout. */
-.flier .item > .line-separator ~ .line-separator hr { margin: 50px auto; }
+.flier .item > .line-separator ~ .line-separator hr {
+  margin: 50px auto;
+}
 
 .flier a {
-    background-image: none;
-    color: var(--blue);
-} .flier a:hover { background-image: none; }
-
+  background-image: none;
+  color: var(--blue);
+}
+.flier a:hover {
+  background-image: none;
+}
 
 /* Upcoming Summer Events [Content Block] */
-.upcoming-summer-events .layout { position: relative; }
+.upcoming-summer-events .layout {
+  position: relative;
+}
 
 .upcoming-summer-events a,
-.upcoming-summer-events a:visited { color: var(--blue); }
+.upcoming-summer-events a:visited {
+  color: var(--blue);
+}
 
 .upcoming-summer-events a.link {
-    position: absolute; 
-    top: 11px; right: 0px;
-    font-size: 14px; line-height: 21px;
+  position: absolute;
+  top: 11px;
+  right: 0px;
+  font-size: 14px;
+  line-height: 21px;
 
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 @media (max-width: 660px) {
-    .upcoming-summer-events a.link {
-        position: relative; text-align: center;
-        display: block;
-        margin-bottom: 50px;
-    }
+  .upcoming-summer-events a.link {
+    position: relative;
+    text-align: center;
+    display: block;
+    margin-bottom: 50px;
+  }
 }
 
-
 .upcoming-summer-events ul.upcoming-events {
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr);
-    gap: 27px; margin: 50px auto 75px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 27px;
+  margin: 50px auto 75px;
 }
 
 @media (max-width: 1024px) {
-    .upcoming-summer-events ul.upcoming-events {
-        grid-template-columns: 2fr;
-        max-width: 375px; margin: 50px auto;
-    }
+  .upcoming-summer-events ul.upcoming-events {
+    grid-template-columns: 2fr;
+    max-width: 375px;
+    margin: 50px auto;
+  }
 }
 
 @media (max-width: 768px) {
-    .upcoming-summer-events ul.upcoming-events {
-        grid-template-columns: 1fr;
-        max-width: 375px; margin: 50px auto 25px;
-    }
+  .upcoming-summer-events ul.upcoming-events {
+    grid-template-columns: 1fr;
+    max-width: 375px;
+    margin: 50px auto 25px;
+  }
 }
 
 .upcoming-summer-events ul li {
-    box-shadow: var(--card-shadow-small);
-    border-radius: var(--rounded);
-    padding: 10px 25px 15px;
-    background-color: var(--white);
+  box-shadow: var(--card-shadow-small);
+  border-radius: var(--rounded);
+  padding: 10px 25px 15px;
+  background-color: var(--white);
 }
 
 .upcoming-summer-events .event .date,
-.upcoming-summer-events .event .time { 
-    display: inline-block;  color: var(--off-black);
-    font-weight: 600; font-size: 14px; line-height: 15px;
-    letter-spacing: 0.828829px; text-transform: uppercase;
+.upcoming-summer-events .event .time {
+  display: inline-block;
+  color: var(--off-black);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 15px;
+  letter-spacing: 0.828829px;
+  text-transform: uppercase;
 }
 
 .upcoming-summer-events .event .time:before {
-    display: inline-block;
-    content: " | ";
-    padding: 0px 8px 0px 5px;
+  display: inline-block;
+  content: " | ";
+  padding: 0px 8px 0px 5px;
 }
 
-.upcoming-summer-events .event img { margin-top: 5px; }
+.upcoming-summer-events .event img {
+  margin-top: 5px;
+}
 
 .upcoming-summer-events .event h3 {
-    font-family: var(--font-primary);
-    color: inherit; font-weight: inherit;
-    font-size: 21px; line-height: 24px;
+  font-family: var(--font-primary);
+  color: inherit;
+  font-weight: inherit;
+  font-size: 21px;
+  line-height: 24px;
 }
 
 .upcoming-summer-events .event p {
-    /* Clearing the plugins default styling */
-    text-align: left; padding: 0px;
+  /* Clearing the plugins default styling */
+  text-align: left;
+  padding: 0px;
 
-    font-weight: 600; font-size: 12px; line-height: 16px;
-    letter-spacing: 0.252px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.252px;
 
-    color: var(--off-black);
+  color: var(--off-black);
 }
 
-.upcoming-summer-events .event a { font-weight: bold; }
+.upcoming-summer-events .event a {
+  font-weight: bold;
+}
 
 .upcoming-summer-events .event .link a {
-    text-transform: uppercase; letter-spacing: 0.75px;
-    font-size: 11px; line-height: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  font-size: 11px;
+  line-height: 15px;
 }
 
-.upcoming-summer-events h3 { font-weight: 600; }
+.upcoming-summer-events h3 {
+  font-weight: 600;
+}
 
 .upcoming-summer-events .text-area p {
-    font-size: 15px; line-height: 21px; 
-    color: var(--black);
+  font-size: 15px;
+  line-height: 21px;
+  color: var(--black);
 }
